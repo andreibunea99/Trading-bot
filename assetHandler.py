@@ -19,11 +19,11 @@ class AssetHandler:
         self.tradeableAssets = set() # assets that may be traded today
         self.availableAssets = set() # assets availabe post filter
         self.usedAssets = set() # taken assets being traded
-        self.excludedAssets = {'SPCE'} # excluded assets (EXAMPLE)
+        self.excludedAssets = set() # excluded assets (EXAMPLE)
 
         try:
             self.rawAssets = set(pd.read_csv(gvars.RAW_ASSETS))
-            print("Raw assets loaded from csv correclty")
+            print("Raw assets loaded from csv correctly")
         except Exception as e:
             print("Could not load raw assets!")
             print(e)
@@ -66,7 +66,7 @@ class AssetHandler:
 
     def lock_asset(self,ticker):
         if type(ticker) is not str:
-            raise Exception('ticker is not a string!')
+            raise Exception('Ticker is not a string!')
 
         time = datetime.now()
         self.usedAssets.remove(ticker)
