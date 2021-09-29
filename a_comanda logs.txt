@@ -1,0 +1,1 @@
+python3 .\tbot.py 2> andrei.txt
