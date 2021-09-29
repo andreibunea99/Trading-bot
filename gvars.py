@@ -9,15 +9,15 @@ from datetime import datetime
 
 MAX_WORKERS = 50 # max threads at a time
 
-gainRatio = 1.2 # takeProfit = -stopLoss*gainRatio
-stopLossMargin = 0.03 # extra margin for the stop loss
+gainRatio = 1.02 # takeProfit = -stopLoss*gainRatio
+stopLossMargin = 0.01 # extra margin for the stop loss
 
 operEquity = 10000 # defines the target amount per execution ($)
 limitOrderMargin = 0.1 # percentage that defines the offset for the limit orders
 
 # YOUR API KEYS AT ALPACA GO HERE!
-API_KEY = "PKJEIEHTJS7L4NDNRDY3"
-API_SECRET_KEY = "MOGdkIH4xqLUlFDoZzYyFN0E1s7fl19gCoyYodkV"
+API_KEY = "PKMSIKBPPMOJU1VEOVJ5"
+API_SECRET_KEY = "i4nXg7j0flj4ZDJhF4WvtCcqwdpzWUYgAZEwVQj2"
 ALPACA_API_URL = "https://paper-api.alpaca.markets"
 
 # this block checks whether you have your keys written or not

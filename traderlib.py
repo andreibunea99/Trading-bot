@@ -111,6 +111,7 @@ class Trader:
         # this function returns the number of shares achievable with the purchasing power
 
         account = self.alpaca.get_account()
+        #buying power!
         if float(account.buying_power) < self.operEquity:
             self._L.info('Oops! Not enough buying power (%d$), aborting' % float(account.buying_power))
             time.sleep(3)
@@ -500,7 +501,7 @@ class Trader:
 
         stock.avg_entry_price = float(self.alpaca.get_position(stock.name).avg_entry_price)
         ema50 = ti.ema(stock.df.close.dropna().to_numpy(), 50)
-        stopLoss = self.set_stoploss(ema50,direction=stock.direction) # stoploss = EMA50
+        stopLoss = self.set_stoploss(stock.avg_entry_price,direction=stock.direction) # stoploss = entry price
         takeProfit = self.set_takeprofit(stock.avg_entry_price,stopLoss)
 
         if stock.direction == 'buy':
